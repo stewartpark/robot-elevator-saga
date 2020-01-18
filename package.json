@@ -1,0 +1,17 @@
+{
+  "name": "es-headless",
+  "version": "0.0.1",
+  "description": "Elevator Saga Headless",
+  "main": "index.js",
+  "scripts": {
+    "build": "./scripts/build-library",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@riotjs/observable": "^4.0.4",
+    "underscore": "^1.9.2",
+    "unobservable": "^1.1.0"
+  }
+}

@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -xe
+
+PROJECTDIR=$(git rev-parse --show-toplevel)
+WORKDIR=$(mktemp -d)
+
+pushd $WORKDIR
+git clone https://github.com/magwo/elevatorsaga.git
+( \
+    echo "const window = global; const _ = require('underscore'); const riot = {observable: require('@riotjs/observable')};"; \
+    cat \
+    elevatorsaga/libs/unobservable.js \
+    elevatorsaga/movable.js \
+    elevatorsaga/base.js \
+    elevatorsaga/interfaces.js \
+    elevatorsaga/challenges.js \
+    elevatorsaga/presenters.js \
+    elevatorsaga/floor.js \
+    elevatorsaga/world.js \
+    elevatorsaga/user.js \
+    elevatorsaga/elevator.js \
+    ; \
+    echo "newGuard = function(){}; module.exports = { createWorldCreator, createWorldController, challenges, getCodeObjFromCode };"; \
+) > $PROJECTDIR/lib.js
+popd
