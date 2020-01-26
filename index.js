@@ -38,6 +38,8 @@ function run(codeObj, challengeIndex, cb) {
     },
     true
   );
+
+  return worldController;
 }
 
 module.exports = { run };

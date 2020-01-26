@@ -1,4 +1,5 @@
 const window = global; const _ = require('underscore'); const riot = {observable: require('@riotjs/observable')};
+const f=()=>null;const console = {log:f,error:f,warn:f};
 (function(unobservable) { "use strict";
 
 // Black magic stuff

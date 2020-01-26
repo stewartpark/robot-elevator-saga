@@ -9,6 +9,7 @@ pushd $WORKDIR
 git clone https://github.com/magwo/elevatorsaga.git
 ( \
     echo "const window = global; const _ = require('underscore'); const riot = {observable: require('@riotjs/observable')};"; \
+    echo "const f=()=>null;const console = {log:f,error:f,warn:f};"; \
     cat \
     elevatorsaga/libs/unobservable.js \
     elevatorsaga/movable.js \
